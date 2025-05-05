@@ -1,0 +1,50 @@
+
+body {
+    background-image: url('https://lh3.googleusercontent.com/pw/AP1GczOgBOPItJRDthewym6TLchFirPOgOFIAmXKUUKm2nISXRXNKy_DJ0VpTKy2JY1iS9au5fRBWP2814lW5LzaNerlvEykzxSm7lOCDQNcPjr1QPEh5uxnlAlKXYIpO_F86GQrlL19RPpi8irq75AfLLfe=w855-h641-s-no-gm?authuser=0');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+.container {
+    background-color: rgba(0, 0, 100, 0.8);
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 600px;
+    border-radius: 12px;
+}
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+input, button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+}
+button {
+    background-color: #0066cc;
+    color: white;
+    cursor: pointer;
+}
+.status {
+    font-size: 32px;
+    margin: 20px 0;
+}
+.countdown {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+table {
+    margin: 0 auto;
+    text-align: left;
+}
+td {
+    padding: 4px 10px;
+}
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+}

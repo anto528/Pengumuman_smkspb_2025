@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Kelulusan - SMKS Putra Bahari Ternate</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <img src="assets/Picture1.png" alt="Logo Sekolah" class="logo">
+        <h1>Pengumuman Kelulusan</h1>
+        <h2>SMKS Putra Bahari Ternate</h2>
+
+        <div id="countdown" class="countdown"></div>
+
+        <div id="login-form">
+            <input type="text" id="nisn" placeholder="Masukkan Nomor Peserta">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="checkLogin()">Lihat Hasil</button>
+        </div>
+
+        <div id="result" style="display:none;">
+            <h3>Data Siswa</h3>
+            <table>
+                <tr><td>Nama</td><td id="nama"></td></tr>
+                <tr><td>Kelas</td><td id="kelas"></td></tr>
+                <tr><td>Nomor Peserta</td><td id="nomor"></td></tr>
+            </table>
+            <h1 id="status" class="status"></h1>
+            <div class="buttons">
+                <button onclick="printPDF()">Cetak PDF</button>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <footer>&copy; 2025 SMKS Putra Bahari Ternate. All rights reserved.</footer>
+    </div>
+</body>
+</html>
