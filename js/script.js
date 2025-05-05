@@ -1,5 +1,5 @@
 const passwordCorrect = "smkspb25";
-const countdownDate = new Date("2025-05-05T20:00:00").getTime(); // Waktu mulai
+const countdownDate = new Date("2025-05-05T23:00:00").getTime(); // Waktu mulai
 const autoCloseDate = new Date(countdownDate + 1 * 60 * 60 * 1000).getTime(); // Tutup 1 jam setelahnya
 
 function checkLogin() {
