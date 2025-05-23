@@ -1,43 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengumuman Kelulusan - SMKS Putra Bahari Ternate</title>
+    <title>Pengumuman Kelulusan - SMP Al-Qur'an Putra Bahari Ternate</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/data.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <img src="assets/Picture1.png" alt="Logo Sekolah" class="logo">
-        <h1>Pengumuman Kelulusan</h1>
-        <h2>SMKS Putra Bahari Ternate</h2>
+        <header>
+            <img src="assets/images/logo.png" alt="Logo SMP Al-Qur'an Putra Bahari Ternate" class="school-logo" id="schoolLogo">
+            <h1 id="schoolNameHeader">SMP Al-Qur'an Putra Bahari Ternate</h1>
+            <h2 id="schoolNameSubtitle">Pengumuman Kelulusan Tahun Ajaran 2024/2025</h2>
+        </header>
 
-        <div id="countdown" class="countdown"></div>
-
-        <div id="login-form">
-            <input type="text" id="nisn" placeholder="Masukkan Nomor Peserta">
-            <input type="password" id="password" placeholder="Password">
-            <button onclick="checkLogin()">Lihat Hasil</button>
+        <div class="countdown" id="countdown">
+            <div>0<span>HARI</span></div>
+            <div>0<span>JAM</span></div>
+            <div>0<span>MENIT</span></div>
+            <div>0<span>DETIK</span></div>
         </div>
 
-        <div id="result" style="display:none;">
-            <h3>Data Siswa</h3>
-            <table>
-                <tr><td>Nama</td><td id="nama"></td></tr>
-                <tr><td>Kelas</td><td id="kelas"></td></tr>
-                <tr><td>Nomor Peserta</td><td id="nomor"></td></tr>
-            </table>
-            <h1 id="status" class="status"></h1>
-            <div class="buttons">
-                <button onclick="printPDF()">Cetak PDF</button>
-                <button onclick="logout()">Logout</button>
+        <section id="loginSection" class="login-section">
+            <p>Silakan masukkan NISN dan password Anda untuk melihat hasil kelulusan.</p>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="nisn">NISN:</label>
+                    <input type="text" id="nisn" name="nisn" placeholder="Masukkan NISN Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan Password" required>
+                </div>
+                <button type="button" class="btn" id="loginButton">Cari Hasil Kelulusan</button>
+                <div id="message"></div>
+            </form>
+        </section>
+
+        <section id="resultSection" class="result-section" style="display: none;">
+            <p><strong>Selamat! Berikut adalah data kelulusan Anda:</strong></p>
+            <div class="result-data">
+                <p><strong>Nama Lengkap:</strong> <span id="studentName"></span></p>
+                <p><strong>Tempat, Tanggal Lahir:</strong> <span id="studentDOB"></span></p>
+                <p><strong>NISN:</strong> <span id="studentNISN"></span></p>
+                <p><strong>Nomor Ujian:</strong> <span id="studentExamNumber"></span></p>
             </div>
-        </div>
+            <h3 class="status-kelulusan" id="studentStatus"></h3>
 
-        <footer>&copy; 2025 SMKS Putra Bahari Ternate. All rights reserved.</footer>
+            <div class="button-group">
+                <button type="button" class="btn btn-yellow" id="printButton">Cetak Bukti Kelulusan</button>
+                <button type="button" class="btn" id="logoutButton">Logout</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>Copyright &copy; <span id="copyrightYear"></span> SMP Al-Qur'an Putra Bahari Ternate. All Rights Reserved.</p>
+        </footer>
     </div>
+
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>
