@@ -1,50 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-blue: #007bff;
+    --secondary-yellow: #ffc107;
+    --dark-blue: #0056b3;
+    --light-yellow: #ffe08a;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #f8f9fa;
+    --border-color: #dee2e6;
+}
 
 body {
-    background-image: url('https://lh3.googleusercontent.com/pw/AP1GczOgBOPItJRDthewym6TLchFirPOgOFIAmXKUUKm2nISXRXNKy_DJ0VpTKy2JY1iS9au5fRBWP2814lW5LzaNerlvEykzxSm7lOCDQNcPjr1QPEh5uxnlAlKXYIpO_F86GQrlL19RPpi8irq75AfLLfe=w855-h641-s-no-gm?authuser=0');
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/images/background.jpg'); /* Ganti dengan path gambar background Anda */
     background-size: cover;
-    font-family: Arial, sans-serif;
-    color: #fff;
-    text-align: center;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-dark);
 }
+
 .container {
-    background-color: rgba(0, 0, 100, 0.8);
-    padding: 20px;
-    margin: 50px auto;
-    max-width: 600px;
-    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.95); /* Sedikit transparan untuk background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden; /* Untuk efek border */
 }
-.logo {
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    padding: 5px; /* Lebar border */
+    background: linear-gradient(45deg, var(--primary-blue), var(--secondary-yellow));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 0;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.school-logo {
     width: 100px;
-    margin-bottom: 20px;
-}
-input, button {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 6px;
-    border: none;
-    font-size: 16px;
-}
-button {
-    background-color: #0066cc;
-    color: white;
-    cursor: pointer;
-}
-.status {
-    font-size: 32px;
-    margin: 20px 0;
-}
-.countdown {
-    font-size: 20px;
     margin-bottom: 15px;
 }
-table {
+
+h1 {
+    color: var(--primary-blue);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--dark-blue);
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.countdown {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: var(--light-yellow);
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.countdown div {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.countdown span {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+.login-section, .result-section {
+    transition: all 0.5s ease-in-out;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
     margin: 0 auto;
+}
+
+.form-group {
     text-align: left;
 }
-td {
-    padding: 4px 10px;
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-blue);
 }
-footer {
+
+.form-group input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.btn {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-2px);
+}
+
+.btn-yellow {
+    background-color: var(--secondary-yellow);
+    color: var(--text-dark);
+}
+
+.btn-yellow:hover {
+    background-color: var(--light-yellow);
+}
+
+#message {
     margin-top: 20px;
-    font-size: 14px;
+    font-weight: 600;
+    color: red;
+    font-size: 1.1em;
+}
+
+.result-data {
+    text-align: left;
+    margin-top: 30px;
+    border-top: 2px dashed var(--border-color);
+    padding-top: 20px;
+}
+
+.result-data p {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.result-data strong {
+    color: var(--dark-blue);
+    margin-right: 8px;
+}
+
+.status-kelulusan {
+    font-size: 3.5em; /* Ukuran besar */
+    font-weight: 700;
+    margin-top: 20px;
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite alternate; /* Animasi berkedip */
+}
+
+.status-kelulusan.LULUS {
+    color: #28a745; /* Hijau untuk LULUS */
+    text-shadow: 2px 2px 5px rgba(40, 167, 69, 0.5);
+}
+
+.status-kelulusan.TIDAK-LULUS {
+    color: #dc3545; /* Merah untuk TIDAK LULUS */
+    text-shadow: 2px 2px 5px rgba(220, 53, 69, 0.5);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+.button-group {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #666;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .countdown {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .countdown div {
+        font-size: 1em;
+    }
+
+    .form-group input {
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .status-kelulusan {
+        font-size: 2.5em;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .school-logo {
+        width: 80px;
+    }
+
+    .status-kelulusan {
+        font-size: 2em;
+    }
 }
